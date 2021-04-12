@@ -219,16 +219,11 @@ console.log('--------- Problem 4 --------')
 
 function whensYourParty(date, year) {
   // Find the day of the year for your birthday
-  const arr = []
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  const thisYear = new Date().getFullYear()
-  const birthYear = bday.getFullYear()
-  const bdate = new Date(bday)
-  for(let i = birthYear; i < thisYear; i += 1) {
-      bdate.setFullYear(i)
-      arr.push(days[date.getDay()])
-  }
-  return arr
+  const newDate = new Date(date)
+  newDate.setFullYear(year)
+  const day = newDate.getDay()
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  return days[day]
 }
 
 const problem4 = whensYourParty(bday, 2022)
